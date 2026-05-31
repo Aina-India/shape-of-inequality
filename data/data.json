@@ -1,0 +1,684 @@
+{
+  "_sources": "WID.world India (Bharti, Chancel, Piketty, Somanchi 2024) · CBDT · Union Budget FY2025-26 · Ram Singh (2025) Review of Income and Wealth 71(2) · PRICE/ICE360 (2021) · Pew Research Center global income tiers (2011 PPP) · AIDIS/NSSO All-India Debt & Investment Survey",
+  "_note_T": "TODO: User requested corrections: some values may need updating to ₹5 cr, ₹7.5 cr, ₹1 cr — verify against latest WID data",
+  "incomeGroups": [
+    {
+      "n": "Bottom 50%",
+      "tp": 75,
+      "inc": 71000,
+      "tax": 0,
+      "evad": 0,
+      "m": 0.71,
+      "twin": "a toddler"
+    },
+    {
+      "n": "Median",
+      "tp": 50,
+      "inc": 100000,
+      "tax": 0,
+      "evad": 0,
+      "m": 1.0,
+      "twin": "a yardstick"
+    },
+    {
+      "n": "Middle 40%",
+      "tp": 30,
+      "inc": 160000,
+      "tax": 0,
+      "evad": 0,
+      "m": 1.6,
+      "twin": "a grown adult"
+    },
+    {
+      "n": "Nat. avg",
+      "tp": 10,
+      "inc": 210000,
+      "tax": 0,
+      "evad": 0,
+      "m": 2.1,
+      "twin": "a doorframe"
+    },
+    {
+      "n": "Top 10%",
+      "tp": 5,
+      "inc": 1300000,
+      "tax": 78000,
+      "evad": 7800,
+      "m": 13,
+      "twin": "a 4-storey building"
+    },
+    {
+      "n": "Top 1%",
+      "tp": 0.5,
+      "inc": 5300000,
+      "tax": 1338480,
+      "evad": 669240,
+      "m": 53,
+      "twin": "a 17-storey tower"
+    },
+    {
+      "n": "Top 0.1%",
+      "tp": 0.05,
+      "inc": 20000000,
+      "tax": 7254000,
+      "evad": 6165900,
+      "m": 200,
+      "twin": "a skyscraper"
+    },
+    {
+      "n": "Top 0.01%",
+      "tp": 0.005,
+      "inc": 100000000,
+      "tax": 38454000,
+      "evad": 35377680,
+      "m": 1000,
+      "twin": "taller than the Burj Khalifa"
+    }
+  ],
+  "paradeIncome": [
+    [
+      0,
+      30000
+    ],
+    [
+      25,
+      71000
+    ],
+    [
+      50,
+      100000
+    ],
+    [
+      70,
+      160000
+    ],
+    [
+      85,
+      250000
+    ],
+    [
+      90,
+      420000
+    ],
+    [
+      95,
+      1100000
+    ],
+    [
+      99,
+      4000000
+    ],
+    [
+      99.9,
+      20000000
+    ],
+    [
+      99.99,
+      80000000
+    ],
+    [
+      100,
+      200000000
+    ]
+  ],
+  "taxSources": [
+    {
+      "g": "Income tax",
+      "s": "> ₹50 L",
+      "pct": 25.08,
+      "c": "--it1"
+    },
+    {
+      "g": "Income tax",
+      "s": "₹10–50 L",
+      "pct": 5.94,
+      "c": "--it2"
+    },
+    {
+      "g": "Income tax",
+      "s": "< ₹10 L",
+      "pct": 1.98,
+      "c": "--it3"
+    },
+    {
+      "g": "GST",
+      "s": "indirect",
+      "pct": 27,
+      "c": "--gst"
+    },
+    {
+      "g": "Corporate tax",
+      "s": "companies",
+      "pct": 26,
+      "c": "--corp"
+    },
+    {
+      "g": "Union excise",
+      "s": "indirect",
+      "pct": 8,
+      "c": "--exc"
+    },
+    {
+      "g": "Customs",
+      "s": "indirect",
+      "pct": 6,
+      "c": "--cus"
+    }
+  ],
+  "taxPayers": [
+    {
+      "n": "> ₹50 L",
+      "c": "--it1",
+      "payers": 1.4,
+      "tax": 76
+    },
+    {
+      "n": "₹10–50 L",
+      "c": "--it2",
+      "payers": 18.3,
+      "tax": 18
+    },
+    {
+      "n": "< ₹10 L",
+      "c": "--it3",
+      "payers": 80.3,
+      "tax": 6
+    }
+  ],
+  "events": [
+    {
+      "yr": 1975,
+      "label": "Emergency"
+    },
+    {
+      "yr": 2000,
+      "label": "IT Boom"
+    },
+    {
+      "yr": 2008,
+      "label": "Fin. Crisis"
+    },
+    {
+      "yr": 2016,
+      "label": "Demonetisation"
+    },
+    {
+      "yr": 2020,
+      "label": "COVID"
+    }
+  ],
+  "kTab": {
+    "_note": "Income shares: WID.world per-adult national income. Wealth shares: AIDIS/NSSO.",
+    "incomeShares": {
+      "top1": [
+        [
+          1982,
+          6.1
+        ],
+        [
+          1990,
+          10.5
+        ],
+        [
+          2014,
+          22
+        ],
+        [
+          2022,
+          22.6
+        ]
+      ],
+      "top10": [
+        [
+          1982,
+          30
+        ],
+        [
+          1990,
+          33.5
+        ],
+        [
+          2014,
+          56
+        ],
+        [
+          2022,
+          57.7
+        ]
+      ],
+      "bot50": [
+        [
+          1982,
+          23.6
+        ],
+        [
+          1990,
+          22.4
+        ],
+        [
+          2014,
+          14.9
+        ],
+        [
+          2022,
+          15
+        ]
+      ]
+    },
+    "wealthShares": {
+      "top1": [
+        [
+          1981,
+          12.5
+        ],
+        [
+          1991,
+          16
+        ],
+        [
+          2002,
+          25
+        ],
+        [
+          2012,
+          30
+        ],
+        [
+          2019,
+          36.5
+        ],
+        [
+          2022,
+          40.1
+        ]
+      ],
+      "top10": [
+        [
+          1981,
+          45
+        ],
+        [
+          2012,
+          63
+        ],
+        [
+          2019,
+          62
+        ],
+        [
+          2022,
+          65
+        ]
+      ],
+      "bot50": [
+        [
+          1981,
+          11
+        ],
+        [
+          1991,
+          8.8
+        ],
+        [
+          2002,
+          6.9
+        ],
+        [
+          2019,
+          6.8
+        ],
+        [
+          2022,
+          6.4
+        ]
+      ]
+    }
+  },
+  "splitTab": {
+    "incomeByBand": {
+      "_note": "Disjoint bands summing to 100%. Years are WID anchor years; linear interpolation between.",
+      "years": [
+        1982,
+        1990,
+        2014,
+        2022
+      ],
+      "bot50": [
+        23.6,
+        22.4,
+        14.9,
+        15
+      ],
+      "mid40": [
+        46.4,
+        44.1,
+        29.1,
+        27.3
+      ],
+      "next9": [
+        23.9,
+        23.0,
+        34.3,
+        35.1
+      ],
+      "top1": [
+        6.1,
+        10.5,
+        21.7,
+        22.6
+      ]
+    },
+    "wealthByBand": {
+      "_note": "AIDIS survey anchors 1961–2022.",
+      "years": [
+        1961,
+        1981,
+        2012,
+        2022
+      ],
+      "bot50": [
+        11,
+        11,
+        6.9,
+        6.4
+      ],
+      "mid40": [
+        44,
+        44,
+        30.1,
+        28.6
+      ],
+      "next9": [
+        32,
+        32.5,
+        33,
+        25
+      ],
+      "top1": [
+        13,
+        12.5,
+        30,
+        40
+      ]
+    },
+    "pcIncome": [
+      {
+        "yr": 1982,
+        "top1": 6.1,
+        "next9": 2.66,
+        "mid40": 1.16,
+        "bot50": 0.47
+      },
+      {
+        "yr": 1990,
+        "top1": 10.5,
+        "next9": 2.56,
+        "mid40": 1.1,
+        "bot50": 0.448
+      },
+      {
+        "yr": 2014,
+        "top1": 21.7,
+        "next9": 3.81,
+        "mid40": 0.73,
+        "bot50": 0.298
+      },
+      {
+        "yr": 2022,
+        "top1": 22.6,
+        "next9": 3.9,
+        "mid40": 0.68,
+        "bot50": 0.3
+      }
+    ],
+    "pcWealth": [
+      {
+        "yr": 1961,
+        "top1": 13,
+        "next9": 3.56,
+        "mid40": 1.1,
+        "bot50": 0.22
+      },
+      {
+        "yr": 1981,
+        "top1": 12.5,
+        "next9": 3.61,
+        "mid40": 1.1,
+        "bot50": 0.22
+      },
+      {
+        "yr": 2012,
+        "top1": 30,
+        "next9": 3.67,
+        "mid40": 0.75,
+        "bot50": 0.138
+      },
+      {
+        "yr": 2022,
+        "top1": 40,
+        "next9": 2.78,
+        "mid40": 0.715,
+        "bot50": 0.128
+      }
+    ]
+  },
+  "rajTab": {
+    "_note": "Top-1% income series: WID.world India 1922–2022. Bottom-50% series starts 1955 (NSSO survey); pre-1955 line is extrapolated.",
+    "top1Income": [
+      [
+        1922,
+        13
+      ],
+      [
+        1940,
+        20.7
+      ],
+      [
+        1950,
+        10.3
+      ],
+      [
+        1982,
+        6.1
+      ],
+      [
+        1990,
+        10.5
+      ],
+      [
+        2014,
+        21.7
+      ],
+      [
+        2022,
+        22.6
+      ]
+    ],
+    "bot50IncomeProj": [
+      [
+        1922,
+        20
+      ],
+      [
+        1955,
+        19
+      ]
+    ],
+    "bot50Income": [
+      [
+        1955,
+        19
+      ],
+      [
+        1965,
+        22
+      ],
+      [
+        1982,
+        23.6
+      ],
+      [
+        1990,
+        22.4
+      ],
+      [
+        2000,
+        20
+      ],
+      [
+        2014,
+        14.9
+      ],
+      [
+        2022,
+        15
+      ]
+    ]
+  },
+  "taxSlabs": [
+    [
+      400000,
+      0
+    ],
+    [
+      800000,
+      0.05
+    ],
+    [
+      1200000,
+      0.10
+    ],
+    [
+      1600000,
+      0.15
+    ],
+    [
+      2000000,
+      0.20
+    ],
+    [
+      2400000,
+      0.25
+    ]
+  ],
+  "taxSurcharges": [
+    {
+      "above": 20000000,
+      "rate": 0.25
+    },
+    {
+      "above": 10000000,
+      "rate": 0.15
+    },
+    {
+      "above": 5000000,
+      "rate": 0.10
+    }
+  ],
+  "paradeMarkers": [
+    [
+      71000,
+      "bot 50% avg · ₹71k"
+    ],
+    [
+      100000,
+      "median · ₹1L = 1m"
+    ],
+    [
+      210000,
+      "national avg · ₹2.1L"
+    ],
+    [
+      420000,
+      "top 10% entry · ₹4.2L"
+    ],
+    [
+      4000000,
+      "top 1% entry · ₹40L"
+    ],
+    [
+      20000000,
+      "top 0.1% entry · ₹2cr"
+    ]
+  ],
+  "taxMixTab": {
+    "_note": "% of central gross tax revenue. Pre-2000 splits approximate; post-2000 from CBDT/Budget.",
+    "years": [
+      1951,
+      1965,
+      1980,
+      1991,
+      2000,
+      2010,
+      2018,
+      2022,
+      2026
+    ],
+    "pit": [
+      18,
+      15,
+      14,
+      15,
+      16,
+      19,
+      24,
+      30,
+      34
+    ],
+    "corp": [
+      16,
+      17,
+      17,
+      18,
+      25,
+      38,
+      27,
+      26,
+      25
+    ],
+    "gst": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      35,
+      28,
+      27
+    ],
+    "svc": [
+      0,
+      0,
+      0,
+      0,
+      6,
+      12,
+      0,
+      0,
+      0
+    ],
+    "exc": [
+      30,
+      41,
+      46,
+      44,
+      34,
+      16,
+      8,
+      10,
+      8
+    ],
+    "cus": [
+      36,
+      27,
+      23,
+      23,
+      19,
+      15,
+      6,
+      6,
+      6
+    ]
+  }
+}

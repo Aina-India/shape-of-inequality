@@ -1,87 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>India: Income, Tax & Inequality</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root{--paper:#f6f1e7;--ink:#1c1a17;--muted:#6f675a;--rule:#d9d0bf;
-    --inc:#5b6b73;--tax:#2f6f95;--evad:#b3361f;--you:#1c1a17;
-    --it1:#1f4d68;--it2:#3f7fa5;--it3:#9cc0d6;--gst:#d98a18;--corp:#3f8f5b;--exc:#7a6f63;--cus:#c9a14a;--svc:#4a8f8f;
-    --low:#3f8f5b;--mid:#2f6f95;--avg:#7a6f63;--top:#d98a18;--apex:#b3361f;--t1:#7e3f9e;}
-  *{box-sizing:border-box;}
-  body{margin:0;background:var(--paper);color:var(--ink);font-family:"Archivo",sans-serif;padding:24px 15px 40px;
-    background-image:radial-gradient(circle at 10% 6%,rgba(0,0,0,.025),transparent 42%);}
-  .wrap{max-width:860px;margin:0 auto;}
-  .kicker{font-weight:600;letter-spacing:.22em;text-transform:uppercase;font-size:11px;color:var(--evad);margin-bottom:8px;}
-  h1{font-family:"Fraunces";font-weight:900;font-size:clamp(22px,4.6vw,36px);line-height:1.05;margin:0 0 8px;}
-  .sub{font-size:13.5px;color:var(--muted);max-width:600px;margin:0 0 14px;line-height:1.55;}
-  .tabs{display:flex;flex-wrap:wrap;gap:4px;border-bottom:1.5px solid var(--rule);margin-bottom:18px;}
-  .tabs button{border:0;background:transparent;font-family:"Fraunces";font-weight:600;font-size:13.5px;padding:9px 12px;cursor:pointer;
-    color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-1.5px;}
-  .tabs button.on{color:var(--ink);border-bottom-color:var(--evad);}
-  .panel{display:none;}.panel.on{display:block;animation:fade .35s;}
-  @keyframes fade{from{opacity:0;transform:translateY(6px);}to{opacity:1;transform:none;}}
-  .controls{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:12px;align-items:center;}
-  .ctl{display:inline-flex;align-items:center;border:1.5px solid var(--ink);border-radius:22px;overflow:hidden;}
-  .ctl span.lbl{font-size:10px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:0 8px;color:var(--muted);}
-  .ctl button{border:0;background:transparent;font-family:"Archivo";font-weight:600;font-size:11.5px;padding:6px 11px;cursor:pointer;color:var(--ink);}
-  .ctl button.on{background:var(--ink);color:var(--paper);}
-  .evtog{border-color:var(--evad);}.evtog button.on{background:var(--evad);color:#fff;}.evtog span.lbl{color:var(--evad);}
-  .legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12.5px;margin:4px 0 8px;}
-  .legend span.row{display:inline-flex;align-items:center;gap:7px;font-weight:500;}
-  .legend i{width:18px;height:12px;border-radius:3px;display:inline-block;}.legend i.ln{height:3px;}
-  svg{width:100%;height:auto;display:block;overflow:visible;}
-  .note{font-size:12px;color:var(--muted);line-height:1.5;margin-top:8px;}
-  .calc{background:#fff;border:1px solid var(--rule);border-radius:14px;padding:18px;margin-top:14px;box-shadow:0 4px 16px rgba(0,0,0,.04);}
-  .calc h3{font-family:"Fraunces";font-weight:600;margin:0 0 10px;font-size:17px;}
-  .inrow{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end;}
-  .inrow .f{flex:1;min-width:130px;}
-  label{font-size:12px;font-weight:600;display:block;margin-bottom:5px;}
-  input,select{font-family:"Archivo";font-size:15px;padding:8px 10px;border:1.5px solid var(--rule);border-radius:9px;width:100%;background:var(--paper);color:var(--ink);}
-  input:focus,select:focus{outline:none;border-color:var(--ink);}
-  .result{margin-top:14px;padding:14px;border-radius:10px;background:var(--paper);display:none;}
-  .result.show{display:block;}
-  .result .big{font-family:"Fraunces";font-weight:900;font-size:23px;margin:0 0 6px;}
-  .result .det{font-size:13px;line-height:1.55;}.result .det b{color:var(--apex);}
-  .pacontrols{display:flex;gap:10px;align-items:center;margin-bottom:10px;flex-wrap:wrap;}
-  .pabtn{font-family:"Archivo";font-weight:600;font-size:13px;padding:8px 16px;border-radius:22px;border:1.5px solid var(--ink);background:var(--ink);color:var(--paper);cursor:pointer;}
-  .pabtn.alt{background:transparent;color:var(--ink);}
-  input[type=range]{flex:1;min-width:160px;accent-color:var(--evad);}
-  .leg2{display:flex;flex-direction:column;gap:6px;margin:14px 0 4px;font-size:12.5px;}
-  .leg2 .grp{font-family:"Fraunces";font-weight:600;font-size:13px;margin-top:5px;}
-  .leg2 span.row{display:inline-flex;align-items:center;gap:8px;}.leg2 i{width:15px;height:15px;border-radius:4px;flex:none;}
-  .leg2 b{font-variant-numeric:tabular-nums;}.leg2 .mut{color:var(--muted);font-weight:400;}
-  .callout{background:rgba(217,138,24,.09);border-left:3px solid var(--gst);padding:11px 14px;border-radius:0 8px 8px 0;font-size:12.5px;line-height:1.5;margin-top:14px;}
-  .callout b{font-family:"Fraunces";}
-  .kratios{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0 4px;}
-  .rc{flex:1;min-width:150px;border-left:3px solid;padding:9px 13px;background:#fff;border-radius:0 8px 8px 0;box-shadow:0 2px 8px rgba(0,0,0,.04);display:flex;flex-direction:column;gap:2px;}
-  .rc span{font-size:12px;font-weight:600;}
-  .rc b{font-family:"Fraunces";font-weight:900;font-size:18px;}
-  .rc small{color:var(--muted);font-size:10.5px;}
-  .pcards{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0;}
-  .pcard{border-left:3px solid;padding:10px 12px;background:#fff;border-radius:0 8px 8px 0;box-shadow:0 2px 8px rgba(0,0,0,.04);}
-  .pband{font-size:12px;font-weight:700;margin-bottom:2px;}
-  .pval{font-family:"Fraunces";font-weight:900;font-size:20px;margin:2px 0;}
-  .psub{font-size:10.5px;color:var(--muted);}
-  .fns{font-size:10px;color:var(--muted);margin-top:14px;border-top:1px solid var(--rule);padding-top:8px;line-height:1.6;}
-  .subh{font-family:"Fraunces";font-weight:700;font-size:15px;margin:20px 0 2px;}
-  .subh .mut{font-weight:400;font-size:12px;color:var(--muted);}
-  .tip{position:fixed;pointer-events:none;background:var(--ink);color:#f6f1e7;padding:7px 10px;border-radius:7px;font-size:12px;line-height:1.45;opacity:0;transition:opacity .12s;z-index:10;white-space:nowrap;box-shadow:0 6px 18px rgba(0,0,0,.25);}
-  .src{font-size:11px;color:var(--muted);border-top:1px solid var(--rule);padding-top:11px;margin-top:18px;line-height:1.5;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India: Income, Tax & Inequality</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,900&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 <div class="wrap">
   <div id="err" style="display:none;color:#b3361f;background:#fff;border:1px solid #b3361f;border-radius:8px;font-size:12px;padding:10px;margin-bottom:12px;"></div>
-  <div class="kicker">India · per adult 2022–23 · central budget FY 25–26</div>
-  <h1>Income, tax & the shape of inequality</h1>
+  <div class="kicker">India · per adult 2022-23 · Union Budget FY 2025-26</div>
+  <h1 class="title">Income, tax & the shape of inequality</h1>
   <p class="sub">Six views of the same story — the K-shaped split, what each class earns and pays, the parade of dwarfs and giants, where the tax comes from, who pays it, and how the mix has shifted over time.</p>
 
-  <div class="tabs">
+  <div class="tabs" role="tablist">
     <button id="tabK" class="on">K-shaped split</button>
     <button id="tabN">The Split</button>
     <button id="tabI">Income · tax · you</button>
@@ -92,7 +27,7 @@
     <button id="tabR">More unequal than the Raj</button>
   </div>
 
-  <!-- K -->
+<!-- K -->
   <div class="panel on" id="pK">
     <p class="sub" style="margin-top:-4px">Since the 1980s, liberalisation split India's income into a K — the top pulling away while the bottom half slid. The three cards below show, per adult, how far each gap has stretched.</p>
     <div class="legend">
@@ -186,8 +121,10 @@
 
   <!-- SOURCES -->
   <div class="panel" id="pS">
-    <svg id="svgS" viewBox="0 0 460 460"></svg>
-    <div class="leg2" id="legS"></div>
+    <div style="display:flex;align-items:center;gap:32px;flex-wrap:wrap">
+  <svg id="svgS" viewBox="0 0 400 400" style="flex:0 0 400px;width:400px"></svg>
+  <div class="leg2" id="legS" style="flex:1;min-width:220px"></div>
+</div>
     <div class="callout"><b>Read the blue wedge:</b> income tax ~33% of central tax; inside it the slimmest shade (>₹50 L earners) is ~76% of all income tax. GST+excise+customs (warm slices) are indirect — paid by every consumer.</div>
   </div>
 
@@ -619,5 +556,8 @@ function tab(n){Object.keys(TB).forEach(k=>{document.getElementById('tab'+k).cla
 Object.keys(TB).forEach(k=>document.getElementById('tab'+k).onclick=()=>tab(k));
 drawK();
 </script>
+
+</div>
+<script src="app.js"></script>
 </body>
 </html>
