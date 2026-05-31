@@ -5,6 +5,13 @@ Six views of the same story — the K-shaped split, what each class earns and pa
 **An interactive data dashboard visualising India's income and wealth inequality from Independence to today — who holds what, per person and in aggregate, across income groups, tax structures, and a century of historical context.**
 
 > Data: WID.world India (Bharti, Chancel, Piketty, Somanchi 2024) · CBDT · Union Budget FY 2025–26
+---
+
+## Preview
+<div align="center">
+  <img src="assets/parade.gif" width="48%"/>
+  <img src="assets/raj.png" width="48%"/>
+</div>
 
 ---
 
