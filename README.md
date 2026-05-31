@@ -93,12 +93,12 @@ All data lives in `data/data.json`. Keys and their sources:
 
 | Data source | Expected release | Keys to update |
 |-------------|-----------------|----------------|
-| **Union Budget** | **Every February** | `taxSlabs`, `taxSurcharges`, `taxSources`, `taxMixTab` last entry |
-| **CBDT Annual Report** | **September–October** | `taxPayers`, `incomeGroups.tax`, `incomeGroups.evad` |
-| **WID.world India** | **6–18 months after reference year** | `incomeGroups`, `paradeIncome`, `paradeMarkers`, `kTab.incomeShares`, `splitTab.incomeByBand`, `splitTab.pcIncome`, `rajTab` |
-| **AIDIS wealth survey** | **Every 5–7 years** | `kTab.wealthShares`, `splitTab.wealthByBand`, `splitTab.pcWealth` |
+| [**Union Budget**](https://indiabudget.gov.in/doc/rec/allrec.pdf) | **Every February** | `taxSlabs`, `taxSurcharges`, `taxSources`, `taxMixTab` last entry |
+| [**CBDT Annual Report**](https://incometaxindia.gov.in/Pages/Direct-Taxes-Data.aspx) | **September–October** | `taxPayers`, `incomeGroups.tax`, `incomeGroups.evad` |
+| [**WID.world India**](https://wid.world/country/india) | **6–18 months after reference year** | `incomeGroups`, `paradeIncome`, `paradeMarkers`, `kTab.incomeShares`, `splitTab.incomeByBand`, `splitTab.pcIncome`, `rajTab` |
+| [**AIDIS wealth survey**](https://www.mospi.gov.in/sites/default/files/publication_reports/Report_no588-AIDIS-77R-SeptFinal_0.pdf) | **Every 5–7 years** | `kTab.wealthShares`, `splitTab.wealthByBand`, `splitTab.pcWealth` |
 | **Pew PPP thresholds** | When World Bank revises PPP benchmarks | Class overlay thresholds in `incomeGroups` |
-| **Ram Singh evasion estimate** | Paper-specific; not annual | `incomeGroups.evad` — update only if a new paper supersedes Singh (2025) |
+| [**Ram Singh evasion estimate**](https://doi.org/10.1111/roiw.70011) | Paper-specific; not annual | `incomeGroups.evad` — update only if a new paper supersedes Singh (2025) |
 
 **Practical recommendation:** Review in **March** (after Budget) and **October** (after CBDT report). The WID update is the most impactful but least predictable — subscribe at [wid.world](https://wid.world) for notifications.
 
