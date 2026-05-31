@@ -5,13 +5,37 @@ window.onerror = function (m, s, l) { var d = document.getElementById('err'); if
 
 let D = {}; // global data store, populated after fetch
 
+// Theme colours — kept in sync with the CSS custom properties so charts repaint
+// correctly when the light/dark theme changes.
+const COLORS = { '--paper': '#f6f1e7', '--ink': '#1c1a17', '--muted': '#6f675a', '--rule': '#d9d0bf', '--inc': '#5b6b73', '--tax': '#2f6f95', '--evad': '#b3361f', '--you': '#1c1a17', '--it1': '#1f4d68', '--it2': '#3f7fa5', '--it3': '#9cc0d6', '--gst': '#d98a18', '--corp': '#3f8f5b', '--exc': '#7a6f63', '--cus': '#c9a14a', '--svc': '#4a8f8f', '--low': '#3f8f5b', '--mid': '#2f6f95', '--avg': '#7a6f63', '--top': '#d98a18', '--apex': '#b3361f', '--t1': '#7e3f9e' };
+
+// Refresh COLORS from the live CSS variables (call after a theme switch).
+function updateColors() {
+  const cs = getComputedStyle(document.documentElement);
+  for (const k in COLORS) {
+    const v = cs.getPropertyValue(k).trim();
+    if (v) COLORS[k] = v;
+  }
+}
+
+function toggleTheme() {
+  const root = document.documentElement;
+  const next = root.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+  root.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+  const btn = document.getElementById('themeBtn');
+  if (btn) btn.textContent = next === 'dark' ? '☀ Light' : '☾ Dark';
+  updateColors();
+  initDashboard();
+}
+window.toggleTheme = toggleTheme;
+
 async function loadData() {
   const res = await fetch('data/data.json');
   D = await res.json();
 }
 
 function initDashboard() {
-  const COLORS = { '--paper': '#f6f1e7', '--ink': '#1c1a17', '--muted': '#6f675a', '--rule': '#d9d0bf', '--inc': '#5b6b73', '--tax': '#2f6f95', '--evad': '#b3361f', '--you': '#1c1a17', '--it1': '#1f4d68', '--it2': '#3f7fa5', '--it3': '#9cc0d6', '--gst': '#d98a18', '--corp': '#3f8f5b', '--exc': '#7a6f63', '--cus': '#c9a14a', '--svc': '#4a8f8f', '--low': '#3f8f5b', '--mid': '#2f6f95', '--avg': '#7a6f63', '--top': '#d98a18', '--apex': '#b3361f', '--t1': '#7e3f9e' };
   const css = v => COLORS[v] || '#000';
   const tip = document.getElementById('tip');
   function showTip(e, h) { tip.innerHTML = h; tip.style.opacity = 1; mv(e); }
@@ -416,7 +440,13 @@ function initDashboard() {
   drawK();
 }
 
-loadData().then(initDashboard).catch(e => {
+loadData().then(() => {
+  updateColors();
+  const theme = localStorage.getItem('theme');
+  const btn = document.getElementById('themeBtn');
+  if (btn) btn.textContent = theme === 'dark' ? '☀ Light' : '☾ Dark';
+  initDashboard();
+}).catch(e => {
   const el = document.getElementById('err');
   if (el) { el.style.display = 'block'; el.textContent = 'Failed to load data.json: ' + e.message; }
   console.error(e);
